@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1584312_lms.CheckTrainingSchedule</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>CheckTrainingSchedule</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CheckTrainingSchedule = Class.create();
+CheckTrainingSchedule.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+ 
+    checkSchedule: function() {
+        var learning_module = this.getParameter("sysparm_learning_module");
+        var date = this.getParameter("sysparm_date");
+ 
+        var grSchedule = new GlideRecord('x_1584312_lms_training_schedule');
+        grSchedule.addQuery('learning_module', learning_module);
+        grSchedule.addQuery('date', date);
+        grSchedule.query();
+ 
+        if (grSchedule.next()) {
+            return 'true';
+        }
+        return 'false';
+    },
+ 
+    type: 'CheckTrainingSchedule'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-28 19:19:21</sys_created_on>
+        <sys_id>173c973a83d7121037bab6cfeeaad3cd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CheckTrainingSchedule</sys_name>
+        <sys_package display_value="LMS" source="x_1584312_lms">fdb252aa8393121037bab6cfeeaad3d7</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS">fdb252aa8393121037bab6cfeeaad3d7</sys_scope>
+        <sys_update_name>sys_script_include_173c973a83d7121037bab6cfeeaad3cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-28 21:28:08</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>173c973a83d7121037bab6cfeeaad3cd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-28 19:19:21</sys_created_on>
+        <sys_id>dfbe53b683d7121037bab6cfeeaad3b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-28 19:19:21</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

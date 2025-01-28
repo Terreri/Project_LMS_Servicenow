@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="2a3c5a6683d3121037bab6cfeeaad37d" extends="task" label="Enrollment" max_length="40" name="x_1584312_lms_enrollment" type="collection">
         <element label="Reproval Reason" max_length="4000" name="reproval_reason" type="string"/>
-        <element label="Training Schadule" max_length="32" name="training_schadule" reference="x_1584312_lms_training_schedule" type="reference"/>
+        <element label="Training Schedule" max_length="32" name="training_schedule" reference="x_1584312_lms_training_schedule" type="reference"/>
     </element>
 </database>

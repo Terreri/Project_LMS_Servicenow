@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1584312_lms.LMSUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>LMSUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var LMSUtils = Class.create();
+LMSUtils.prototype = {
+    initialize: function() {
+    },
+	refQualSchedule: function(){
+		var userID = gs.getUserID(); //ID do usuário logado
+		gs.info("Esse é o User ID:" + userID);
+		var grEnroll = new GlideRecord("x_1584312_lms_enrollment");
+
+		grEnroll.addQuery("user", userID);
+		grEnroll.query();
+
+		var enrolledSchedules = [];
+		while(grEnroll.next()){
+			enrolledSchedules.push(grEnroll.training_schedule); //duvida aqui
+		}
+
+		return 'sys_idNOT IN [' + enrolledSchedules.join(",") + "]";
+
+		
+	},
+
+    type: 'LMSUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-28 19:57:40</sys_created_on>
+        <sys_id>ad72a332831b121037bab6cfeeaad38e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>LMSUtils</sys_name>
+        <sys_package display_value="LMS" source="x_1584312_lms">fdb252aa8393121037bab6cfeeaad3d7</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS">fdb252aa8393121037bab6cfeeaad3d7</sys_scope>
+        <sys_update_name>sys_script_include_ad72a332831b121037bab6cfeeaad38e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-28 20:22:29</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ad72a332831b121037bab6cfeeaad38e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-28 19:57:40</sys_created_on>
+        <sys_id>e0876b32831b121037bab6cfeeaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-28 19:57:40</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
