@@ -14,21 +14,37 @@ LMSUtils.prototype = {
     initialize: function() {
     },
 	refQualSchedule: function(){
-		var userID = gs.getUserID(); //ID do usuário logado
-		gs.info("Esse é o User ID:" + userID);
+		var schedulesNotToShow = [];
 		var grEnroll = new GlideRecord("x_1584312_lms_enrollment");
-
-		grEnroll.addQuery("user", userID);
+		grEnroll.addEncodedQuery("opened_byDYNAMIC90d1921e5f510100a9ad2572f2b477fe");
 		grEnroll.query();
-
-		var enrolledSchedules = [];
 		while(grEnroll.next()){
-			enrolledSchedules.push(grEnroll.training_schedule); //duvida aqui
+			schedulesNotToShow.push(grEnroll.training_schedule.sys_id.toString());
 		}
-
-		return 'sys_idNOT IN [' + enrolledSchedules.join(",") + "]";
-
 		
+		var schedulesToShow = [];
+		var grSchedule = new GlideRecord("x_1584312_lms_training_schedule");
+		grSchedule.addEncodedQuery("date>" + gs.endOfToday() + "^instructor!=" + gs.getUserID());
+		grSchedule.query();
+		while(grSchedule.next()){
+			var grTotalEnrolls = new GlideRecord("x_1584312_lms_enrollment");
+			grTotalEnrolls.addEncodedQuery("training_schedule=" + grSchedule.sys_id.toString() + "^stateIN1,8,3");
+			grTotalEnrolls.query();
+			var countTotalEnrolls = 0;
+			while (grTotalEnrolls.next()) {
+				countTotalEnrolls++;  // Incrementa o contador para cada task encontrada
+			}
+			gs.info("Count: "+ countTotalEnrolls + "Spots:" + grSchedule.spots);
+			
+			if(schedulesNotToShow.indexOf(grSchedule.sys_id.toString()) == -1 && grSchedule.spots > countTotalEnrolls){
+				schedulesToShow.push(grSchedule.sys_id.toString());
+			}
+		}
+		gs.info("Shedules to show:"+ schedulesToShow);
+		gs.info("Shedules not to show:"+ schedulesNotToShow);
+		
+		return "sys_idIN" + schedulesToShow.join(",");
+
 	},
 
     type: 'LMSUtils'
@@ -37,14 +53,14 @@ LMSUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-01-28 19:57:40</sys_created_on>
         <sys_id>ad72a332831b121037bab6cfeeaad38e</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>LMSUtils</sys_name>
         <sys_package display_value="LMS" source="x_1584312_lms">fdb252aa8393121037bab6cfeeaad3d7</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="LMS">fdb252aa8393121037bab6cfeeaad3d7</sys_scope>
         <sys_update_name>sys_script_include_ad72a332831b121037bab6cfeeaad38e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-01-28 20:22:29</sys_updated_on>
+        <sys_updated_on>2025-01-29 18:43:12</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ad72a332831b121037bab6cfeeaad38e</id>

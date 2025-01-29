@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
     <sysevent_email_action action="INSERT_OR_UPDATE">
-        <action_insert>true</action_insert>
+        <action_insert>false</action_insert>
         <action_update>false</action_update>
         <active>true</active>
         <advanced_condition/>
@@ -28,7 +28,7 @@
         <event_parm_2>false</event_parm_2>
         <exclude_delegates>false</exclude_delegates>
         <force_delivery>false</force_delivery>
-        <from>lms@aoop.com.br</from>
+        <from/>
         <generation_type>triggered</generation_type>
         <importance/>
         <include_attachments>false</include_attachments>
@@ -36,13 +36,13 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello ${opened_by.name}</p>
-<p>You have been enrolled and are in the approval process.&nbsp;</p>
+        <message_html><![CDATA[<p>Hello ${opened_by.name}!</p>
+<p>Your Enroll request for ${training_schedule.name} was APPROVED</p>
 <p>Regards,</p>
 <p>LMS Aoop</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>Notificate Enroll</name>
+        <name>Enroll Approved</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
@@ -50,40 +50,29 @@
         <recipient_groups/>
         <recipient_users/>
         <reply_to/>
-        <send_self>false</send_self>
+        <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Congratulations Your enrollment is pending approval.</subject>
+        <subject>Enroll request for ${training_schedule.name} was APPROVED</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-01-28 14:32:58</sys_created_on>
+        <sys_created_on>2025-01-29 18:32:08</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>da1b5e3a8393121037bab6cfeeaad382</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Notificate Enroll</sys_name>
+        <sys_id>deac541383d7121037bab6cfeeaad39c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Enroll Approved</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS" source="x_1584312_lms">fdb252aa8393121037bab6cfeeaad3d7</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">fdb252aa8393121037bab6cfeeaad3d7</sys_scope>
-        <sys_update_name>sysevent_email_action_da1b5e3a8393121037bab6cfeeaad382</sys_update_name>
+        <sys_update_name>sysevent_email_action_deac541383d7121037bab6cfeeaad39c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-01-29 18:35:54</sys_updated_on>
+        <sys_updated_on>2025-01-29 18:32:08</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>
-    <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>da1b5e3a8393121037bab6cfeeaad382</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-01-28 14:59:39</sys_created_on>
-        <sys_id>cf4322b283d3121037bab6cfeeaad3a1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-01-28 14:59:39</sys_updated_on>
-        <table>sysevent_email_action</table>
-        <use_es_latest>true</use_es_latest>
-    </sys_es_latest_script>
 </record_update>

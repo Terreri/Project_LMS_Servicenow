@@ -6,7 +6,6 @@
         <element dependent="group_instructors" dependent_on_field="group_instructors" label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference" use_dependent_field="true"/>
         <element label="Date" max_length="40" name="date" type="glide_date"/>
         <element label="Spots" max_length="40" name="spots" type="integer"/>
-        <element label="Students" max_length="1024" name="students" reference="sys_user" type="glide_list"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Group Instructors" max_length="32" name="group_instructors" reference="sys_user_group" type="reference"/>
         <index name="index">
