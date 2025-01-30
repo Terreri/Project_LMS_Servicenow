@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="62861eae8393121037bab6cfeeaad35c" label="Training Schedule" max_length="40" name="x_1584312_lms_training_schedule" type="collection">
-        <element label="Name" max_length="40" name="name" type="string"/>
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
         <element label="Description" max_length="40" name="description" type="string"/>
-        <element display="true" label="Learning Module" max_length="32" name="learning_module" reference="x_1584312_lms_learning_modules" type="reference"/>
+        <element label="Learning Module" max_length="32" name="learning_module" reference="x_1584312_lms_learning_modules" type="reference"/>
         <element dependent="group_instructors" dependent_on_field="group_instructors" label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference" use_dependent_field="true"/>
         <element label="Date" max_length="40" name="date" type="glide_date"/>
         <element label="Spots" max_length="40" name="spots" type="integer"/>

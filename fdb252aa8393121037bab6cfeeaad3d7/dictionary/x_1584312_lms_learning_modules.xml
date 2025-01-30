@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="81135aaa8393121037bab6cfeeaad34e" label="Learning Modules" max_length="40" name="x_1584312_lms_learning_modules" type="collection">
         <element label="Description" max_length="4000" name="description" type="string"/>
+        <element label="English Description" max_length="4000" name="english_description" type="string"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
     </element>
 </database>

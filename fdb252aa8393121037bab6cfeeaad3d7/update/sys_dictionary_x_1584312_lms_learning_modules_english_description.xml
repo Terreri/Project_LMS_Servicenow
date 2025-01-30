@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="name" table="x_1584312_lms_training_schedule">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="english_description" table="x_1584312_lms_learning_modules">
         <active>true</active>
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation/>
-        <choice>0</choice>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Name</column_label>
+        <column_label>English Description</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -16,12 +21,12 @@
         <delete_roles/>
         <dependent/>
         <dependent_on_field/>
-        <display>true</display>
+        <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>name</element>
+        <element>english_description</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -29,8 +34,8 @@
         <function_field>false</function_field>
         <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <name>x_1584312_lms_training_schedule</name>
+        <max_length>4000</max_length>
+        <name>x_1584312_lms_learning_modules</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -46,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-01-27 19:45:32</sys_created_on>
-        <sys_name>Name</sys_name>
+        <sys_created_on>2025-01-30 12:45:33</sys_created_on>
+        <sys_name>English Description</sys_name>
         <sys_package display_value="LMS" source="x_1584312_lms">fdb252aa8393121037bab6cfeeaad3d7</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">fdb252aa8393121037bab6cfeeaad3d7</sys_scope>
-        <sys_update_name>sys_dictionary_x_1584312_lms_training_schedule_name</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1584312_lms_learning_modules_english_description</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-01-30 17:59:36</sys_updated_on>
+        <sys_updated_on>2025-01-30 12:46:15</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
